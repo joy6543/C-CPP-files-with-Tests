@@ -3,28 +3,36 @@
 
 namespace {
 
-    TEST(Complex, BasicsAdd) {
-        Complex a = (Complex) { 2, 3 },
-                b = (Complex) { 4, 5 };
-        EXPECT_DOUBLE_EQ(add(a,b).real,6);
-        EXPECT_DOUBLE_EQ(add(a,b).im,8);
+    TEST(HW2,RunningTotal) {
+        ASSERT_EQ(running_total(1),  1);
+        ASSERT_EQ(running_total(1),  2);
+        ASSERT_EQ(running_total(5),  7);
+        ASSERT_EQ(running_total(-3), 4);
     }
 
-    TEST(Complex, BasicsNegate) {
-        Complex a = (Complex) { 2, 3 };
-        EXPECT_DOUBLE_EQ(negate(a).real,-2);
-        EXPECT_DOUBLE_EQ(negate(a).im,-3);
+    TEST(HW2,Reverse) {
+        int x[] = {10,20,30,40,50};
+        int * y = reverse(x,5);
+        ASSERT_EQ(y[0],50);
+        ASSERT_EQ(y[1],40);
+        ASSERT_EQ(y[2],30);
+        ASSERT_EQ(y[3],20);
+        ASSERT_EQ(y[4],10);
+        free(y);
     }
 
-    TEST(Complex, BasicsMult) {
-        Complex a = (Complex) { 2, 3 },
-                b = (Complex) { 4, 5 };
-        EXPECT_DOUBLE_EQ(multiply(a,b).real,-7);
-        EXPECT_DOUBLE_EQ(multiply(a,b).im,22);
+    TEST(HW2,ReverseInPlace) {
+        int x[] = {10,20,30,40,50};
+        reverse_in_place(x,5);
+        ASSERT_EQ(x[0],50);
+        ASSERT_EQ(x[1],40);
+        ASSERT_EQ(x[2],30);
+        ASSERT_EQ(x[3],20);
+        ASSERT_EQ(x[4],10);
     }
 
-    TEST(Complex, BasicsMag) {
-        Complex a = (Complex) { 3 , 4};
-        EXPECT_DOUBLE_EQ(magnitude(a),5);
+    TEST(HW2,NumInstances) {
+        int a[] = { 1, 1, 2, 3, 1, 4, 5, 2, 20, 5 };
+        ASSERT_EQ(num_occurences(a,10,1), 3);
     }
 }

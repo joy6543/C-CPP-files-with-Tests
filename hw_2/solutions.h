@@ -9,31 +9,33 @@
  *  a denominator, denoted den. Varions Methods that take Complexs and return 
  *  Complexs do arithmetical operations on them.
  */
+
+/*
 typedef struct {
     double real;
     double im;
-} Complex;
-
+} int;
+*/
 /*! Add two Complex numbers
  *  \param a The first summand
  *  \param b The second summand
  */
-Complex add ( Complex a, Complex b );
+int running_total (a);
 
 /*! Subtract two Complex numbers
  *  \param a The negate term 
  */
-Complex negate ( Complex a );
+int reverse (x,a);
 
 /*! Multiply two Complex numbers
  *  \param a The first term
  *  \param b The second term
  */
-Complex multiply ( Complex a, Complex b );
+int reverse_in_place (x,a);
 
 /*! Multiply two Complexs together (does not reduce)
  *  \param a The magnitude value
  */
-double magnitude ( Complex a );
+int num_occurences (a,len,num);
 
 #endif

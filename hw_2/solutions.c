@@ -1,18 +1,27 @@
-#include "complex.h"
+#include "solutions.h"
 #include <math.h>
 
-Complex add ( Complex a, Complex b ) {
-  return (Complex) { a.real + b.real , a.im + b.im };
+int running_total (a) {
+  int i=0;
+  for(i=0; i<a; i++){
+    a = i + a;
+  }
+  return a;
 }
 
-Complex negate ( Complex a) {
-  return (Complex) { -a.real , -a.im };
+int reverse (x,a) {
+  
+  return a;
 }
 
-Complex multiply ( Complex a, Complex b ) {
-  return (Complex) { (a.real * b.real) - (a.im * b.im), (a.real * b.im) + (a.im * b.real) };
+int reverse_in_place (x,a) {
+
+  return a;
 }
 
-double magnitude ( Complex a ) {
-  return (double) (sqrt(a.real*a.real + a.im*a.im));
+int num_occurences (a,len,num) {
+  int a[] = { 1, 1, 2, 3, 1, 4, 5, 2, 20, 5 };
+
+  return num;
 }
+*/
