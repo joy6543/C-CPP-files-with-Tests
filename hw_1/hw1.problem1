@@ -1,0 +1,72 @@
+Script started on Sat Jan 21 06:56:40 2023
+# echo "Hello 2023 and the new quarter!"
+Hello 2023 and the new quarter!
+//echo is a command to print on the screen.
+# date
+Sat Jan 21 06:56:56 UTC 2023
+//date is used to display the current date and time on the screen
+# pwd
+/source/hw_1
+//pwd is used to display full path of home directory
+# ls
+complex  hw1.problem1
+# cd ~
+//cd ~ is used to go to the home directory
+# ls
+//ls id used to list all files in the current directory
+# mkdir temp
+//mkdir is used to create a folder
+# ls
+temp
+# mv temp temp_new
+//mv is used to rename the folder
+# ls
+temp_new
+# cd temp_new
+//cd is used to change directory
+# ls
+# touch file5
+//touch is used to create a file
+# ls
+file5
+# mv file5 test
+//Again mv is used to rename files
+# ls
+test
+# cd ..
+//cd .. is used to move up one directory
+# ls
+temp_new
+# rm -r temp_new
+//rm -r is used to delete a directory containing files
+# ls
+# echo "It's a secret!" > secretfile
+//'>' is used to create a file containing the text written by echo command
+# ls -l
+//ls -l is used to list the contents of the directory with details
+total 4
+-rw-r--r-- 1 root root 15 Jan 21 06:58 secretfile
+# chmod 444 secretfile
+//chmod is used to change permissions, here 444 removes writing rights from the file
+# ls -l
+total 4
+-r--r--r-- 1 root root 15 Jan 21 06:58 secretfile
+# chmod 777 secretfile
+//Here 777 provides all the rights of read, write and execute
+# ls -l
+total 4
+-rwxrwxrwx 1 root root 15 Jan 21 06:58 secretfile
+# cat secretfile
+//cat is used to display contents of the file
+It's a secret!
+# cat >> secretfile
+//cat >> is used to append more text into the file
+Adding more text
+# 
+# cat secretfile
+It's a secret!
+Adding more text
+# exit
+//To exit and save the script
+
+Script done on Sat Jan 21 06:59:49 2023
