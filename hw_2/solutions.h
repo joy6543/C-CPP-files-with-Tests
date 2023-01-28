@@ -3,39 +3,14 @@
 
 /*! @file */
 
-/*! \breif Complex object and method definitions
- *
- *  A Complex object is a struct with a numerator, denoted num, and
- *  a denominator, denoted den. Varions Methods that take Complexs and return 
- *  Complexs do arithmetical operations on them.
- */
+/*! Function Definitions */
+ 
+int running_total (int a);
 
-/*
-typedef struct {
-    double real;
-    double im;
-} int;
-*/
-/*! Add two Complex numbers
- *  \param a The first summand
- *  \param b The second summand
- */
-int running_total (a);
+int * reverse (const int * x, const int n);
 
-/*! Subtract two Complex numbers
- *  \param a The negate term 
- */
-int reverse (x,a);
+void reverse_in_place (int x[], int n);
 
-/*! Multiply two Complex numbers
- *  \param a The first term
- *  \param b The second term
- */
-int reverse_in_place (x,a);
-
-/*! Multiply two Complexs together (does not reduce)
- *  \param a The magnitude value
- */
-int num_occurences (a,len,num);
+int num_occurences (int a[], int len, int value);
 
 #endif
