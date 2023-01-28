@@ -3,7 +3,7 @@
 
 /*! @file */
 
-/*! Function Definitions */
+/*! Function Declarations */
  
 int running_total (int a);
 
