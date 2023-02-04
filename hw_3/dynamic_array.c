@@ -161,6 +161,7 @@ double DynamicArray_pop_front(DynamicArray * da) {
 DynamicArray * DynamicArray_map(const DynamicArray * da, double (*f) (double)) {
     assert(da->buffer != NULL);
     DynamicArray * result = DynamicArray_new();
+    assert(result->buffer != NULL);
     int i;
     for ( i=0; i<DynamicArray_size(da); i++ ) {
         DynamicArray_set(result, i, f(DynamicArray_get(da, i)));
@@ -318,6 +319,7 @@ double DynamicArray_first ( const DynamicArray * da ){
 DynamicArray * DynamicArray_copy ( const DynamicArray * da ){
     assert(da->buffer != NULL);
     DynamicArray * result = DynamicArray_new();
+    assert(result->buffer != NULL);
     int i;
     for ( i=0; i<DynamicArray_size(da); i++ ) {
         DynamicArray_push( result, DynamicArray_get(da, i));
@@ -336,6 +338,7 @@ DynamicArray * DynamicArray_copy ( const DynamicArray * da ){
 */
 DynamicArray * DynamicArray_range ( double a, double b, double step){
     DynamicArray * result = DynamicArray_new();
+    assert(result->buffer != NULL);
     double x = a;
     while ( x < b ) {
         DynamicArray_push(result, x);
@@ -357,6 +360,7 @@ DynamicArray * DynamicArray_concat ( const DynamicArray * a, const DynamicArray 
     assert(a->buffer != NULL);
     assert(b->buffer != NULL);
     DynamicArray * result = DynamicArray_new();
+    assert(result->buffer != NULL);
     
     int i, j;
     for (i=0; i<DynamicArray_size(a); i++){
@@ -382,6 +386,7 @@ return result;
 DynamicArray * DynamicArray_take ( const DynamicArray * a, int value ){
     assert(a->buffer != NULL);
     DynamicArray * result = DynamicArray_new();
+    assert(result->buffer != NULL);
     
     int i;
 
@@ -394,6 +399,9 @@ DynamicArray * DynamicArray_take ( const DynamicArray * a, int value ){
         else {
             for (i=0; i<value; i++){
                 DynamicArray_push(result, DynamicArray_get(a, i));
+            }
+            for (i = 0; i>value; i++){
+                DynamicArray_push(result, DynamicArray_get(a, 0));
             }
         }
     }
