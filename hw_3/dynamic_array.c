@@ -340,7 +340,7 @@ DynamicArray * DynamicArray_range ( double a, double b, double step){
     DynamicArray * result = DynamicArray_new();
     assert(result->buffer != NULL);
     double x = a;
-    while ( x < b ) {
+    while ( x <= b ) {
         DynamicArray_push(result, x);
         //printf("%f \n", DynamicArray_get(result, x));
         x += step;
@@ -392,22 +392,33 @@ DynamicArray * DynamicArray_take ( const DynamicArray * a, int value ){
 
     if (value >= 0){
         if (value <= DynamicArray_size(a)){
-            for (i=0; i<value; i++){
+            for (i = 0; i < value; i++){
                 DynamicArray_push(result, DynamicArray_get(a, i));
             }
         }
         else {
-            for (i=0; i<value; i++){
+            for (i = 0; i < DynamicArray_size(a); i++){
                 DynamicArray_push(result, DynamicArray_get(a, i));
             }
-            for (i = 0; i>value; i++){
-                DynamicArray_push(result, DynamicArray_get(a, 0));
+            for (i = DynamicArray_size(a); i < value; i++){
+                DynamicArray_push(result, 0);
             }
         }
     }
     else{
-        for (i=value; i >= 0; i--){
-            DynamicArray_push(result, DynamicArray_get(a , i));
+        value = -value;
+        if (value <= DynamicArray_size(a)){
+            for (i=DynamicArray_size(a)-value; i<DynamicArray_size(a); i++){
+                DynamicArray_push(result, DynamicArray_get(a, i));
+            }
+        }
+        else {
+            for (i = DynamicArray_size(a); i<value; i++){
+                DynamicArray_push(result, 0);
+            }
+            for (i=0; i<DynamicArray_size(a); i++){
+                DynamicArray_push(result, DynamicArray_get(a, i));
+            }
         }
     }
     return result;

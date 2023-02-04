@@ -246,27 +246,23 @@ namespace {
         DynamicArray * c = DynamicArray_take(a, -2);
         DynamicArray * d = DynamicArray_take(a, 7);
         
-        DynamicArray * test1 = DynamicArray_range(1, 3, 1);
-        DynamicArray * test2 = DynamicArray_range(5, 2, -1);
-        DynamicArray * test3 = DynamicArray_range(1, 3, 1);
+        DynamicArray * test1 = DynamicArray_range(1, 2, 1);
+        DynamicArray * test2 = DynamicArray_range(4, 5, 1);
+        DynamicArray * test3 = DynamicArray_range(1, 5, 1);
+        DynamicArray_push(test3, 0);
+        DynamicArray_push(test3, 0);
 
         int i;
         
         for (i=0; i<DynamicArray_size(test1); i++){
-            //printf("a: %f\n", DynamicArray_get(b, i));
-            //printf("test1: %f\n", DynamicArray_get(test1, i));
             ASSERT_EQ(DynamicArray_get(b, i) , DynamicArray_get(test1, i));
         }
         
         for (i=0; i<DynamicArray_size(test2); i++){
-            //printf("b: %f\n", DynamicArray_get(c, i));
-            //printf("test2: %f\n", DynamicArray_get(test2, i));
             ASSERT_EQ(DynamicArray_get(c, i) , DynamicArray_get(test2, i));
         }
         
         for (i=0; i<DynamicArray_size(test3); i++){
-            //printf("c: %f\n", DynamicArray_get(d, i));
-            //printf("test3: %f\n", DynamicArray_get(test3, i));
             ASSERT_EQ(DynamicArray_get(d, i) , DynamicArray_get(test3, i));
         }
         
